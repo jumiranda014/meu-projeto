@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Histórico - Controle de Atividades</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <aside class="sidebar">
+        <h2>Controle</h2>
+        <p class="subtitulo-menu">PAINEL DE TRABALHO</p>
+        <nav>
+            <a href="index.html">Início</a>
+            <a href="atividades.html">Atividades</a>
+            <a href="nova-atividade.html">Nova atividade</a>
+            <a href="distribuidores.html">Distribuidores</a>
+            <a class="ativo" href="historico.html">Histórico</a>
+            <a href="relatorios.html">Relatórios</a>
+        </nav>
+        <div class="rodape-menu">Organização diária</div>
+    </aside>
+
+    <main class="conteudo">
+        <header class="topo">
+            <div>
+                <p class="caminho">PAINEL / HISTÓRICO</p>
+                <h1>Histórico</h1>
+                <p class="descricao">Consulte os registros de atividades anteriores.</p>
+            </div>
+        </header>
+
+        <section class="painel">
+            <div class="titulo-secao">
+                <div>
+                    <h2>Registros anteriores</h2>
+                    <p>Histórico demonstrativo de atividades.</p>
+                </div>
+            </div>
+
+            <div class="aviso">
+                Os registros abaixo são exemplos estáticos. Atualize as informações manualmente neste arquivo.
+            </div>
+
+            <div class="tabela-responsiva">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Data</th>
+                            <th>Distribuidor</th>
+                            <th>Atividade</th>
+                            <th>Resultado</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>15/10/2026</td>
+                            <td>Distribuidor Alfa</td>
+                            <td>Conferência de arquivos</td>
+                            <td>Conferência realizada.</td>
+                            <td><span class="status concluida">Concluída</span></td>
+                        </tr>
+                        <tr>
+                            <td>16/10/2026</td>
+                            <td>Distribuidor Beta</td>
+                            <td>Atualização de dados</td>
+                            <td>Dados atualizados.</td>
+                            <td><span class="status concluida">Concluída</span></td>
+                        </tr>
+                        <tr>
+                            <td>17/10/2026</td>
+                            <td>Distribuidor Gama</td>
+                            <td>Preparação de relatório</td>
+                            <td>Relatório em revisão.</td>
+                            <td><span class="status andamento">Em andamento</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <footer>Controle de Atividades • Painel de organização</footer>
+    </main>
+</body>
+</html>

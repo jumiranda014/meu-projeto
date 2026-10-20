@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nova atividade - Controle de Atividades</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <aside class="sidebar">
+        <h2>Controle</h2>
+        <p class="subtitulo-menu">PAINEL DE TRABALHO</p>
+        <nav>
+            <a href="index.html">Início</a>
+            <a href="atividades.html">Atividades</a>
+            <a class="ativo" href="nova-atividade.html">Nova atividade</a>
+            <a href="distribuidores.html">Distribuidores</a>
+            <a href="historico.html">Histórico</a>
+            <a href="relatorios.html">Relatórios</a>
+        </nav>
+        <div class="rodape-menu">Organização diária</div>
+    </aside>
+
+    <main class="conteudo">
+        <header class="topo">
+            <div>
+                <p class="caminho">PAINEL / NOVA ATIVIDADE</p>
+                <h1>Nova atividade</h1>
+                <p class="descricao">Preencha os dados da atividade.</p>
+            </div>
+        </header>
+
+        <section class="painel">
+            <div class="titulo-secao">
+                <div>
+                    <h2>Informações da atividade</h2>
+                    <p>Formulário de referência para organizar os dados.</p>
+                </div>
+            </div>
+
+            <div class="aviso">
+                O formulário abaixo é apenas visual. Sem JavaScript ou um sistema de banco de dados, o botão não salva os dados automaticamente.
+                Para cadastrar uma atividade, adicione uma linha na tabela do arquivo atividades.html.
+            </div>
+
+            <form class="formulario">
+                <div class="campo">
+                    <label for="distribuidor">Distribuidor</label>
+                    <input type="text" id="distribuidor" placeholder="Nome do distribuidor">
+                </div>
+
+                <div class="campo">
+                    <label for="atividade">Nome da atividade</label>
+                    <input type="text" id="atividade" placeholder="Ex.: Extração de arquivos">
+                </div>
+
+                <div class="campo">
+                    <label for="data">Data prevista</label>
+                    <input type="date" id="data">
+                </div>
+
+                <div class="campo">
+                    <label for="status">Status</label>
+                    <select id="status">
+                        <option>Pendente</option>
+                        <option>Em andamento</option>
+                        <option>Concluída</option>
+                        <option>Atrasada</option>
+                    </select>
+                </div>
+
+                <div class="campo completo">
+                    <label for="observacoes">Observações</label>
+                    <textarea id="observacoes" placeholder="Descreva os detalhes da atividade"></textarea>
+                </div>
+
+                <div class="acoes-formulario">
+                    <a class="botao-secundario" href="atividades.html">Cancelar</a>
+                    <button class="botao" type="button">Cadastrar atividade</button>
+                </div>
+            </form>
+        </section>
+
+        <footer>Controle de Atividades • Painel de organização</footer>
+    </main>
+</body>
+</html>

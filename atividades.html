@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividades - Controle de Atividades</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <aside class="sidebar">
+        <h2>Controle</h2>
+        <p class="subtitulo-menu">PAINEL DE TRABALHO</p>
+        <nav>
+            <a href="index.html">Início</a>
+            <a class="ativo" href="atividades.html">Atividades</a>
+            <a href="nova-atividade.html">Nova atividade</a>
+            <a href="distribuidores.html">Distribuidores</a>
+            <a href="historico.html">Histórico</a>
+            <a href="relatorios.html">Relatórios</a>
+        </nav>
+        <div class="rodape-menu">Organização diária</div>
+    </aside>
+
+    <main class="conteudo">
+        <header class="topo">
+            <div>
+                <p class="caminho">PAINEL / ATIVIDADES</p>
+                <h1>Atividades</h1>
+                <p class="descricao">Consulte e acompanhe suas tarefas.</p>
+            </div>
+            <a class="botao" href="nova-atividade.html">+ Nova atividade</a>
+        </header>
+
+        <section class="painel">
+            <div class="titulo-secao">
+                <div>
+                    <h2>Todas as atividades</h2>
+                    <p>Edite os dados diretamente neste arquivo HTML.</p>
+                </div>
+            </div>
+
+            <div class="aviso">
+                Esta página é estática. Para incluir, remover ou alterar atividades, edite as linhas da tabela no VS Code.
+            </div>
+
+            <div class="tabela-responsiva">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Distribuidor</th>
+                            <th>Atividade</th>
+                            <th>Data</th>
+                            <th>Observações</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Distribuidor Alfa</td>
+                            <td>Extração de arquivos</td>
+                            <td>20/10/2026</td>
+                            <td>Arquivos extraídos.</td>
+                            <td><span class="status concluida">Concluída</span></td>
+                        </tr>
+                        <tr>
+                            <td>Distribuidor Beta</td>
+                            <td>Conferência de dados</td>
+                            <td>21/10/2026</td>
+                            <td>Conferir informações recebidas.</td>
+                            <td><span class="status andamento">Em andamento</span></td>
+                        </tr>
+                        <tr>
+                            <td>Distribuidor Gama</td>
+                            <td>Atualização de planilha</td>
+                            <td>22/10/2026</td>
+                            <td>Atualizar dados do período.</td>
+                            <td><span class="status pendente">Pendente</span></td>
+                        </tr>
+                        <tr>
+                            <td>Distribuidor Delta</td>
+                            <td>Envio de relatório</td>
+                            <td>23/10/2026</td>
+                            <td>Preparar relatório semanal.</td>
+                            <td><span class="status andamento">Em andamento</span></td>
+                        </tr>
+                        <tr>
+                            <td>Distribuidor Alfa</td>
+                            <td>Verificação de arquivos</td>
+                            <td>24/10/2026</td>
+                            <td>Aguardando conferência.</td>
+                            <td><span class="status pendente">Pendente</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <footer>Controle de Atividades • Painel de organização</footer>
+    </main>
+</body>
+</html>

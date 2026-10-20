@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu To Do | Tarefas</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <aside class="sidebar">
+        <a class="logo" href="#" data-view="today">
+            <span class="logo-icon">✓</span>
+            <span>Meu To Do</span>
+        </a>
+
+        <div class="profile">
+            <div class="avatar">JM</div>
+            <div>
+                <strong>Minhas tarefas</strong>
+                <small>Organização de trabalho</small>
+            </div>
+        </div>
+
+        <nav class="menu">
+            <button class="menu-item active" data-view="today">
+                <span>☀</span> Meu dia
+                <span class="menu-count" id="count-today">0</span>
+            </button>
+            <button class="menu-item" data-view="important">
+                <span>☆</span> Importante
+                <span class="menu-count" id="count-important">0</span>
+            </button>
+            <button class="menu-item" data-view="planned">
+                <span>▦</span> Planejado
+                <span class="menu-count" id="count-planned">0</span>
+            </button>
+            <button class="menu-item" data-view="assigned">
+                <span>♙</span> Atribuído a mim
+            </button>
+            <button class="menu-item" data-view="completed">
+                <span>✓</span> Concluído
+                <span class="menu-count" id="count-completed">0</span>
+            </button>
+        </nav>
+
+        <div class="sidebar-section">
+            <p class="section-label">MINHAS LISTAS</p>
+            <button class="menu-item" data-view="all">
+                <span>☰</span> Todas as tarefas
+            </button>
+            <button class="menu-item" data-view="distributors">
+                <span>▤</span> Distribuidores
+            </button>
+        </div>
+
+        <div class="sidebar-bottom">
+            <span class="online-dot"></span>
+            Seus dados ficam neste navegador
+        </div>
+    </aside>
+
+    <main class="main">
+        <header class="topbar">
+            <div class="breadcrumb">ESPAÇO DE TRABALHO / <span id="breadcrumb-current">MEU DIA</span></div>
+            <div class="topbar-right">
+                <span id="current-date"></span>
+                <button class="icon-button" id="export-button" title="Exportar tarefas">⇩</button>
+            </div>
+        </header>
+
+        <section class="page-heading">
+            <div>
+                <div class="heading-icon" id="heading-icon">☀</div>
+                <h1 id="page-title">Meu dia</h1>
+                <p id="page-subtitle">Organize o que precisa ser feito hoje.</p>
+            </div>
+            <div class="heading-stats">
+                <span id="task-summary">0 tarefas pendentes</span>
+            </div>
+        </section>
+
+        <section class="content-area">
+            <div class="toolbar">
+                <div class="search-box">
+                    <span>⌕</span>
+                    <input type="search" id="search-input" placeholder="Buscar tarefas...">
+                </div>
+                <select id="filter-status" aria-label="Filtrar por status">
+                    <option value="all">Todos os status</option>
+                    <option value="pending">Pendentes</option>
+                    <option value="completed">Concluídas</option>
+                </select>
+            </div>
+
+            <form id="task-form" class="add-task">
+                <span class="plus">＋</span>
+                <input id="task-title" type="text" placeholder="Adicionar uma tarefa" required maxlength="150">
+                <button type="submit">Adicionar</button>
+            </form>
+
+            <form id="details-form" class="details-form" hidden>
+                <div class="form-heading">
+                    <h2 id="form-title">Nova tarefa</h2>
+                    <button type="button" id="cancel-edit" class="text-button">Cancelar</button>
+                </div>
+
+                <div class="form-grid">
+                    <label>
+                        Nome da tarefa *
+                        <input id="detail-title" required maxlength="150" placeholder="Ex.: Conferir arquivos">
+                    </label>
+
+                    <label>
+                        Distribuidor / projeto
+                        <input id="detail-distributor" maxlength="100" placeholder="Ex.: Distribuidor Alfa">
+                    </label>
+
+                    <label>
+                        Data de entrega
+                        <input id="detail-date" type="date">
+                    </label>
+
+                    <label>
+                        Prioridade
+                        <select id="detail-priority">
+                            <option value="normal">Normal</option>
+                            <option value="important">Importante</option>
+                            <option value="urgent">Urgente</option>
+                        </select>
+                    </label>
+
+                    <label>
+                        Categoria
+                        <select id="detail-category">
+                            <option value="Trabalho">Trabalho</option>
+                            <option value="Extração de arquivos">Extração de arquivos</option>
+                            <option value="Conferência">Conferência</option>
+                            <option value="Relatórios">Relatórios</option>
+                            <option value="Outros">Outros</option>
+                        </select>
+                    </label>
+
+                    <label>
+                        Responsável
+                        <input id="detail-assignee" maxlength="100" placeholder="Seu nome">
+                    </label>
+
+                    <label class="full-width">
+                        Observações
+                        <textarea id="detail-notes" rows="3" maxlength="1000" placeholder="Detalhes ou instruções da tarefa"></textarea>
+                    </label>
+                </div>
+
+                <div class="form-actions">
+                    <button type="button" class="secondary-button" id="cancel-edit-bottom">Cancelar</button>
+                    <button type="submit" class="primary-button">Salvar tarefa</button>
+                </div>
+            </form>
+
+            <div id="task-groups"></div>
+
+            <div id="empty-state" class="empty-state" hidden>
+                <div class="empty-icon">✓</div>
+                <h2>Nenhuma tarefa por aqui</h2>
+                <p>Adicione uma tarefa ou escolha outra lista no menu.</p>
+            </div>
+
+            <footer class="page-footer">
+                Meu To Do · Organize suas tarefas com simplicidade
+            </footer>
+        </section>
+    </main>
+
+    <dialog id="task-dialog" class="task-dialog">
+        <div class="dialog-header">
+            <h2>Detalhes da tarefa</h2>
+            <button type="button" id="close-dialog" class="icon-button">×</button>
+        </div>
+        <div id="dialog-content"></div>
+    </dialog>
+</body>
+</html>
